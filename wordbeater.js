@@ -1,22 +1,17 @@
 window.addEventListener('load', init);
 
-// Globals
 
-// Available Levels
 const levels = {
   easy: 5,
   medium: 3,
   hard: 1
 };
-
-// To change level
 const currentLevel = levels.medium;
 
 let time = currentLevel;
 let score = 0;
 let isPlaying;
 
-// DOM Elements
 const wordInput = document.querySelector('#word-input');
 const currentWord = document.querySelector('#current-word');
 const scoreDisplay = document.querySelector('#score');
@@ -76,7 +71,7 @@ function startMatch() {
     wordInput.value = '';
     score++;
   }
-  
+
   // Highscore based on score value for Session Storage
   if (typeof sessionStorage['highscore'] === 'undefined' || score > sessionStorage['highscore']) {
     sessionStorage['highscore'] = score;
